@@ -31,10 +31,8 @@ func save(path string, fileSize int) {
 	c := "a"
 	//i=307200   120k
 	for i := 0; i < 1024*fileSize; i++ {
-		x := rand.Intn(200)
-		if x >= 48 && x <= 122 {
-			c += string(x)
-		}
+		x := rand.Intn(127)
+		c += string(x)
 	}
 	outputFile.WriteString(c)
 	defer outputFile.Close()
